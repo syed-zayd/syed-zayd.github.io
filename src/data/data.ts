@@ -13,6 +13,15 @@ export const aboutData: About = {
 
 export const projectsData: Project[] = [
     {
+        title: "QuillAI",
+        description: "Full-stack AI powered note-taking app with a rich-text editor, and RAG chatbot/flashcards generation",
+        image: "quillai.png",
+        skills: ["React", "TypeScript", "FastAPI", "OpenAI", "Gemini", "Pinecone", "MongoDB", "Firebase", "TailwindCSS"],
+        links: [
+            {icon: FaLink, url: "https://www.quillai.net/"}
+        ],
+    },
+    {
         title: "SignSense",
         description: "Built a real-time sign language recognition system using Raspberry Pi to predict ASL letters.",
         image: "signsense.png",
@@ -45,7 +54,7 @@ export const projectsData: Project[] = [
         image: "shalderok.jpg",
         skills: ["Java", "Swing", "HTML", "CSS", "JavaScript"],
         links: [
-            { icon: FaLink, url: "https://github.com/syed-zayd/shalderok" },
+            { icon: FaGithub, url: "https://github.com/syed-zayd/shalderok" },
         ],
     },
     {
@@ -56,14 +65,6 @@ export const projectsData: Project[] = [
         links: [
             { icon: FaLink, url: "https://syed-zayd.github.io/" },
             { icon: FaGithub, url: "https://github.com/syed-zayd/syed-zayd.github.io" },
-        ],
-    },
-    {
-        title: "QuillAI",
-        description: "[In Progress] Developing a full-stack note-taking app with an AI chatbot to answer questions based on notes.",
-        image: "quillai.jpeg",
-        skills: ["React", "TypeScript", "FastAPI", "OpenAI", "Gemini", "Pinecone", "MongoDB", "Firebase", "TailwindCSS"],
-        links: [
         ],
     },
 ];
