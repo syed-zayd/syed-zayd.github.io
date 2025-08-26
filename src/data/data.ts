@@ -63,7 +63,7 @@ export const projectsData: Project[] = [
         image: "portfolio.jpeg",
         skills: ["Next.js", "React", "TypeScript", "HTML", "CSS", "Tailwind CSS"],
         links: [
-            { icon: FaLink, url: "https://syed-zayd.github.io/" },
+            { icon: FaLink, url: "https://zaydsyed.com/" },
             { icon: FaGithub, url: "https://github.com/syed-zayd/syed-zayd.github.io" },
         ],
     },
@@ -71,10 +71,16 @@ export const projectsData: Project[] = [
 
 export const experienceData: Experience[] = [
     {
+        position: "AI Platform Developer",
+        company: "TripToGo",
+        date: "May 2025 - Aug 2025",
+        description: "Built a FastAPI microservice to orchestrate LLM agents for preference collection and personalized itinerary generation in an AI travel assistant. Designed evals to assess agent decision making and response quality across different use cases. Collaborated on backend development in a Kotlin/Spring GraphQL service to improve integration with user-facing features.",
+    },
+    {
         position: "Software Development Intern",
-        company: "Automation HQ",
-        date: "June 2023 - August 2023",
-        description: "Worked on backend features using Java Spring Boot, assisting in the implementation of RESTful APIs and automating regression test cases. Collaborated with the team using Jira and Bitbucket under Agile practices.",
+        company: "AutomationHQ",
+        date: "Jun 2023 - Aug 2023",
+        description: "Improved client-facing dashboard performance by optimizing Spring Boot services with MongoDB aggregation. Automated regression testing with internal tools and XML selectors. Migrated services to updated libraries and deprecated unused functions to reduce maintenance overhead.",
     },
 ];
 
@@ -156,6 +162,6 @@ export const contactData: ContactLink[] = [
     {
         name: "Personal Site",
         icon: FaGlobe,
-        url: "https://syed-zayd.github.io/",
+        url: "https://zaydsyed.com/",
     },
 ];

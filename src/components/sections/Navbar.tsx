@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { contactData } from "@/data/data";
 import { motion } from "framer-motion";
+import { FiMenu } from "react-icons/fi";
 
-const sections = ["about", "projects", "skills", "contact"];
+const sections = ["about", "projects", "experience", "skills", "contact"];
 
 const Navbar = () => {
     const [activeSection, setActiveSection] = useState<string | null>(null);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const container = {
         hidden: { opacity: 0 },
@@ -24,6 +26,19 @@ const Navbar = () => {
             scale: 1,
             transition: {
                 duration: 0.5,
+                type: "tween",
+                ease: "easeIn",
+            },
+        }
+    };
+
+    const mobileItem = {
+        hidden: { opacity: 0, scale: 0 },
+        show: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                duration: 0.2,
                 type: "tween",
                 ease: "easeIn",
             },
@@ -74,7 +89,8 @@ const Navbar = () => {
                 onClick={() => scrollToSection("top")}
                 className="text-2xl font-bold"
             >
-                Zayd Syed
+                <span className="sm:hidden">Zayd</span>
+                <span className="hidden sm:inline">Zayd Syed</span>
             </motion.button>
 
             {/* Navigation Links */}
@@ -109,7 +125,7 @@ const Navbar = () => {
                 initial="hidden"
                 animate="show"
                 variants={container}
-                className="flex gap-4"
+                className="gap-4 hidden sm:flex"
             >
                 {contactData.map((contact, index) => (
                     <motion.button
@@ -126,6 +142,43 @@ const Navbar = () => {
                         </motion.div>
                     </motion.button>
                 ))}
+            </motion.div>
+
+            {/* Contact Links (Mobile) */}
+            <motion.div
+                initial="hidden"
+                animate="show"
+                variants={container}
+                className="sm:hidden relative mt-1"
+            >
+                {/* Contact Links Menu Button */}
+                <motion.button
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className="sm:hidden"
+                >
+                    <FiMenu size={24} />
+                </motion.button>
+
+                {/* Contact Links (When Open) */}
+                {isMenuOpen &&
+                    <div className="absolute flex flex-col gap-4 mt-2">
+                        {contactData.map((contact, index) => (
+                            <motion.button
+                                variants={mobileItem}
+                                key={index}
+                                onClick={() => window.open(contact.url, '_blank')}
+                                rel="noopener noreferrer"
+                            >
+                                <motion.div
+                                    key={index}
+                                    whileHover={{ scale: 1.2 }}
+                                >
+                                    <contact.icon size={24} className="hover:text-red-500" />
+                                </motion.div>
+                            </motion.button>
+                        ))}
+                    </div>
+                }
             </motion.div>
         </nav>
     );
